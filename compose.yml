@@ -13,3 +13,9 @@ services:
       - NODE_ENV=development
       - PORT=3000
     restart: unless-stopped
+
+  tunnel:
+    image: cloudflare/cloudflared:2024.12.2
+    command: tunnel --no-autoupdate run --token ${CF_TUNNEL_TOKEN}
+    env_file: .env
+    restart: unless-stopped
