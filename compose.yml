@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: ghcr.io/sofiiavarich/audioapi:sha-c5d966c
     ports:
       - "3000:3000"
     volumes:
